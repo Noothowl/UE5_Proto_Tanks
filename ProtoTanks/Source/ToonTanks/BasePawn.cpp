@@ -21,7 +21,7 @@ ABasePawn::ABasePawn()
 	SM_Turret->SetupAttachment(SM_Base);
 		//Spawn Point
 	SC_SpawnProjectile = CreateDefaultSubobject<USceneComponent>("Projectile Spawner");
-
+	SC_SpawnProjectile->SetupAttachment(SM_Turret);
 	
 
 }
