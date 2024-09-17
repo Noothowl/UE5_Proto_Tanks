@@ -2,12 +2,27 @@
 
 
 #include "BasePawn.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	//Components
+		//Capsule
+	RootCapsule = CreateDefaultSubobject <UCapsuleComponent> ("Root Capsule");
+	RootComponent = RootCapsule;
+		//Mesh
+	SM_Base = CreateDefaultSubobject <UStaticMeshComponent>("Base Mesh");
+	SM_Base->SetupAttachment(RootCapsule);
+	
+	SM_Turret = CreateDefaultSubobject <UStaticMeshComponent>("Turret Mesh");
+	SM_Turret->SetupAttachment(SM_Base);
+		//Spawn Point
+	SC_SpawnProjectile = CreateDefaultSubobject<USceneComponent>("Projectile Spawner");
+
+	
 
 }
 

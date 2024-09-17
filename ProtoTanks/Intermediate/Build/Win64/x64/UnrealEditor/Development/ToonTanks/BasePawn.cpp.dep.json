@@ -7,7 +7,11 @@
         "Includes": [
             "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\toontanks\\definitions.toontanks.h",
             "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\source\\toontanks\\basepawn.h",
-            "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\intermediate\\build\\win64\\unrealeditor\\inc\\toontanks\\uht\\basepawn.generated.h"
+            "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\intermediate\\build\\win64\\unrealeditor\\inc\\toontanks\\uht\\basepawn.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\capsulecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
