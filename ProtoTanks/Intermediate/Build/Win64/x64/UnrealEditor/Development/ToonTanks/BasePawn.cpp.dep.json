@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\source\\toontanks\\basepawn.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\intermediate\\build\\win64\\x64\\toontankseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\toontanks\\definitions.toontanks.h",
+            "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\source\\toontanks\\basepawn.h",
+            "c:\\users\\marti\\onedrive\\escritorio\\ue5_proto_tanks\\prototanks\\intermediate\\build\\win64\\unrealeditor\\inc\\toontanks\\uht\\basepawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

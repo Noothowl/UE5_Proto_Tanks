@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\marti\\OneDrive\\Escritorio\\UE5_Proto_Tanks\\ProtoTanks\\Source\\ToonTanks\\ToonTanks.Build.cs",
+		"C:\\Users\\marti\\OneDrive\\Escritorio\\UE5_Proto_Tanks\\ProtoTanks\\Source\\ToonTanks.Target.cs",
+		"C:\\Users\\marti\\OneDrive\\Escritorio\\UE5_Proto_Tanks\\ProtoTanks\\Source\\ToonTanksEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}
