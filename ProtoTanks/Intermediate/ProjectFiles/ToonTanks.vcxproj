@@ -261,6 +261,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\ToonTanks\BasePawn.h"/>
+    <ClCompile Include="..\..\Source\ToonTanks\Tank.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\Tank.h"/>
     <None Include="..\..\Source\ToonTanks\ToonTanks.Build.cs"/>
     <ClCompile Include="..\..\Source\ToonTanks\ToonTanks.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

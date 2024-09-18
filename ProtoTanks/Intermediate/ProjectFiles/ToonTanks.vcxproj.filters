@@ -36,6 +36,12 @@
     <ClInclude Include="..\..\Source\ToonTanks\BasePawn.h">
       <Filter>Source\ToonTanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ToonTanks\Tank.cpp">
+      <Filter>Source\ToonTanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\Tank.h">
+      <Filter>Source\ToonTanks</Filter>
+    </ClInclude>
     <None Include="..\..\Source\ToonTanks\ToonTanks.Build.cs">
       <Filter>Source\ToonTanks</Filter>
     </None>

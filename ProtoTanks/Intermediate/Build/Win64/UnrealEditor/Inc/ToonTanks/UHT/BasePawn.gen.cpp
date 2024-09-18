@@ -38,25 +38,25 @@ struct Z_Construct_UClass_ABasePawn_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RootCapsule_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Components" },
+		{ "Category", "Pawn Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "BasePawn.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SM_Base_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Components" },
+		{ "Category", "Pawn Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "BasePawn.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SM_Turret_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Components" },
+		{ "Category", "Pawn Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "BasePawn.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SC_SpawnProjectile_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Components" },
+		{ "Category", "Pawn Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "BasePawn.h" },
 	};
@@ -123,10 +123,10 @@ ABasePawn::~ABasePawn() {}
 struct Z_CompiledInDeferFile_FID_Users_marti_OneDrive_Escritorio_UE5_Proto_Tanks_ProtoTanks_Source_ToonTanks_BasePawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABasePawn, ABasePawn::StaticClass, TEXT("ABasePawn"), &Z_Registration_Info_UClass_ABasePawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABasePawn), 1200758643U) },
+		{ Z_Construct_UClass_ABasePawn, ABasePawn::StaticClass, TEXT("ABasePawn"), &Z_Registration_Info_UClass_ABasePawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABasePawn), 1027194290U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_marti_OneDrive_Escritorio_UE5_Proto_Tanks_ProtoTanks_Source_ToonTanks_BasePawn_h_1836669595(TEXT("/Script/ToonTanks"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_marti_OneDrive_Escritorio_UE5_Proto_Tanks_ProtoTanks_Source_ToonTanks_BasePawn_h_46841243(TEXT("/Script/ToonTanks"),
 	Z_CompiledInDeferFile_FID_Users_marti_OneDrive_Escritorio_UE5_Proto_Tanks_ProtoTanks_Source_ToonTanks_BasePawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_marti_OneDrive_Escritorio_UE5_Proto_Tanks_ProtoTanks_Source_ToonTanks_BasePawn_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

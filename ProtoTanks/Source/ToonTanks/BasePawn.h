@@ -26,13 +26,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 private:
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* RootCapsule;
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* SM_Base;
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* SM_Turret;
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Components",meta=(AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components",meta=(AllowPrivateAccess = "true"))
 	USceneComponent* SC_SpawnProjectile;
+
 
 };
