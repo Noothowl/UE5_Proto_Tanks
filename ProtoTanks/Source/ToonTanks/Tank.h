@@ -25,6 +25,7 @@ private:
 
 
 	void Move(float value);
+	virtual void Fire();
 	void Turn(float value);
 
 	class APlayerController* PlayerControllerRef;

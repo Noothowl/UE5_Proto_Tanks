@@ -40,6 +40,20 @@ void ABasePawn::Tick(float DeltaTime)
 
 }
 
+void ABasePawn::Fire()
+{
+	FVector MySpawner = SC_SpawnProjectile->GetComponentLocation();
+
+	DrawDebugSphere(GetWorld(),
+		MySpawner,
+		25.f,
+		12.f,
+		FColor::Green,
+		false,
+		3.f);
+
+}
+
 // Called to bind functionality to input
 void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {

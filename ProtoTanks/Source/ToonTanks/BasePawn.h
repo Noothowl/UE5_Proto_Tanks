@@ -19,7 +19,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	void RotateTurret(FVector Target);
-
+	void Fire();
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
