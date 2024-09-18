@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "BasePawn.h"
 #include "Tank.generated.h"
-
 /**
  * 
  */
@@ -28,8 +27,15 @@ private:
 	void Move(float value);
 	void Turn(float value);
 
+	class APlayerController* PlayerControllerRef;
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 public:
 	ATank();
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void Tick(float DeltaTime) override;
 	
 };

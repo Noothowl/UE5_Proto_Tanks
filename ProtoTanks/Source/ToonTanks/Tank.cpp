@@ -7,11 +7,6 @@
 #include "Kismet/GameplayStatics.h"
 
 
-
-
-
-
-
 ATank::ATank() {
 	SA_ForCamera=CreateDefaultSubobject<USpringArmComponent>("Spring Arm");
 	SA_ForCamera->SetupAttachment(RootComponent);
@@ -42,4 +37,31 @@ void ATank::Turn(float Value) {
 	FRotator DeltaRot(0.f, 0.f, 0.f);
 	DeltaRot.Yaw = Value * TRate * UGameplayStatics::GetWorldDeltaSeconds(this);
 	AddActorLocalRotation(DeltaRot, true);
+}
+
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+
+	PlayerControllerRef = Cast<APlayerController>(GetController());
+	
+}
+
+void ATank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	
+	if (PlayerControllerRef) {
+		FHitResult Res;
+		PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, Res);
+		DrawDebugSphere(GetWorld(),
+			Res.ImpactPoint,
+			25.f,
+			12.f,
+			FColor::Red,
+			false,
+			-1.f);
+
+		ABasePawn::RotateTurret(Res.ImpactPoint);
+	}
 }
