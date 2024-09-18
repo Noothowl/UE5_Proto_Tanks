@@ -19,7 +19,14 @@ private:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Camera Components", meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* Camera;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Input Components", meta = (AllowPrivateAccess = "true"))
+	float MSpeed;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Input Components", meta = (AllowPrivateAccess = "true"))
+	float TRate;
+
+
 	void Move(float value);
+	void Turn(float value);
 
 public:
 	ATank();
