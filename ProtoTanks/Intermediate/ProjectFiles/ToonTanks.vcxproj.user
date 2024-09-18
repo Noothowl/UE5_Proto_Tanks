@@ -31,9 +31,8 @@
     <DebuggerFlavor>WindowsRemoteDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
-    <LocalDebuggerCommandArguments>"C:\Users\marti\OneDrive\Escritorio\UE5_Proto_Tanks\ProtoTanks\ToonTanks.uproject" -skipcompile</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"$(SolutionDir)ToonTanks.uproject" -skipcompile</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <RemoteDebuggerCommandArguments>"C:\Users\marti\OneDrive\Escritorio\UE5_Proto_Tanks\ProtoTanks\ToonTanks.uproject" -skipcompile</RemoteDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win64_arm64_Development_Editor|x64'">
     <RemoteDebuggerCommandArguments>"$(SolutionDir)ToonTanks.uproject" -skipcompile</RemoteDebuggerCommandArguments>

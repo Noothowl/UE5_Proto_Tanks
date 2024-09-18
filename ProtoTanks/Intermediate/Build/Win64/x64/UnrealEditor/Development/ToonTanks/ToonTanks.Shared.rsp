@@ -283,6 +283,9 @@
 /I "Editor\AnimationEditMode\Public"
 /I "C:\Users\marti\OneDrive\Escritorio\UE5_Proto_Tanks\ProtoTanks\Intermediate\Build\Win64\UnrealEditor\Inc\ToonTanks\UHT"
 /I "C:\Users\marti\OneDrive\Escritorio\UE5_Proto_Tanks\ProtoTanks\Source"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\LibTiff\Source\Win64"
 /external:I "ThirdParty\LibTiff\Source"
