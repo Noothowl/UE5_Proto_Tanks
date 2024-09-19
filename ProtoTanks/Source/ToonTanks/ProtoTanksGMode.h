@@ -19,10 +19,15 @@ protected:
 	virtual void BeginPlay() override;
 	UFUNCTION(BlueprintImplementableEvent)
 	void StartGame();
+	UFUNCTION(BlueprintImplementableEvent)
+	void EndGame(bool WonGame);
 private:
 	class ATank* Tank;
 	class AProtoTanksController* ProtoTanksController;
 	float StartDelay = 3.f;
+
+	int32 TargetEnemies = 0;
+	int32 GetEnemiesCount();
 
 	void HandleGameStart();
 };

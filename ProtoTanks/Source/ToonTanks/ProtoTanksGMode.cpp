@@ -21,15 +21,22 @@ void AProtoTanksGMode::ActorDied(AActor* DeadActor) {
 		if (Tank->GetTankPlayerControllerPtr())
 		{
 			ProtoTanksController->SetPlayerEnabledState(false);
-		}
+			
+		} EndGame(false);
 	}
 	else if (ATurret* DestroyedTurret = Cast<ATurret>(DeadActor)) {
 		DestroyedTurret->HandleDestruction();
+		--TargetEnemies;
+		if (TargetEnemies==0)
+		{
+			EndGame(true);
+		}
 	}
 }
 
 void AProtoTanksGMode::HandleGameStart(){
 
+	TargetEnemies = GetEnemiesCount();
 	Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
 	ProtoTanksController = Cast<AProtoTanksController>(UGameplayStatics::GetPlayerController(this, 0));
 
@@ -44,5 +51,12 @@ void AProtoTanksGMode::HandleGameStart(){
 
 		GetWorldTimerManager().SetTimer(PlayerEnabledTimerHandle, PlayerEnabledDelegate, StartDelay, false);
 	}
+}
+
+int32 AProtoTanksGMode::GetEnemiesCount() {
+	 TArray<AActor*> Enemies;
+	 UGameplayStatics::GetAllActorsOfClass(this, ATurret::StaticClass(), Enemies);
+	
+	return Enemies.Num();
 }
 
