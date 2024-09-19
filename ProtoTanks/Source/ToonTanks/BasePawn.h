@@ -19,7 +19,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	void RotateTurret(FVector Target);
-
+	void Fire();
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -36,5 +37,7 @@ private:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components",meta=(AllowPrivateAccess = "true"))
 	USceneComponent* SC_SpawnProjectile;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Combat Components", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class ABaseProjectile> BaseProjectileClass;
 
 };

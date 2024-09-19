@@ -36,6 +36,12 @@
     <ClInclude Include="..\..\Source\ToonTanks\BasePawn.h">
       <Filter>Source\ToonTanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ToonTanks\BaseProjectile.cpp">
+      <Filter>Source\ToonTanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\BaseProjectile.h">
+      <Filter>Source\ToonTanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\ToonTanks\Tank.cpp">
       <Filter>Source\ToonTanks</Filter>
     </ClCompile>
@@ -49,6 +55,12 @@
       <Filter>Source\ToonTanks</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\ToonTanks\ToonTanks.h">
+      <Filter>Source\ToonTanks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ToonTanks\Turret.cpp">
+      <Filter>Source\ToonTanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\Turret.h">
       <Filter>Source\ToonTanks</Filter>
     </ClInclude>
   </ItemGroup>
