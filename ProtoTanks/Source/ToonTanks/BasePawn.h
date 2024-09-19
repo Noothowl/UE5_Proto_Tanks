@@ -41,4 +41,9 @@ private:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Combat Components", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class ABaseProjectile> BaseProjectileClass;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
+	UParticleSystem* VfxOnDeath;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
+	USoundBase* DeathSound;
+
 };

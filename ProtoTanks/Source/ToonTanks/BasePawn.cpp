@@ -4,6 +4,7 @@
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
 #include "BaseProjectile.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -28,9 +29,15 @@ ABasePawn::ABasePawn()
 }
 
 void ABasePawn::HandleDestruction() {
-	//vfx
 
-	//
+	UGameplayStatics::SpawnEmitterAtLocation(this, VfxOnDeath, GetActorLocation(), GetActorRotation());
+
+	if (DeathSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+	}
+	
+
 	
 }
 
