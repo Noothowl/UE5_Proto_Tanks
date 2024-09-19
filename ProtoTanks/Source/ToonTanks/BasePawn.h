@@ -6,6 +6,8 @@
 #include "GameFramework/Pawn.h"
 #include "BasePawn.generated.h"
 
+
+class UCameraShakeBase;
 UCLASS()
 class TOONTANKS_API ABasePawn : public APawn
 {
@@ -45,5 +47,6 @@ private:
 	UParticleSystem* VfxOnDeath;
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
 	USoundBase* DeathSound;
-
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UCameraShakeBase> CameraOnDeathClass;
 };

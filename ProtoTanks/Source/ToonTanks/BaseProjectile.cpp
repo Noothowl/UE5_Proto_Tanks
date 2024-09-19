@@ -6,6 +6,7 @@
 #include "GameFramework/DamageType.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Camera/CameraShakeBase.h"
 
 // Sets default values
 ABaseProjectile::ABaseProjectile()
@@ -44,7 +45,7 @@ void ABaseProjectile::Tick(float DeltaTime)
 void ABaseProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
 
 
-	auto MyOwner = GetOwner();
+	AActor* MyOwner = GetOwner();
 	if (MyOwner == nullptr) return;
 
 	if (MyOwner == nullptr)
@@ -53,8 +54,8 @@ void ABaseProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UP
 		return;
 	}
 
-	auto MyOwnerInstigator = MyOwner->GetInstigatorController();
-	auto DmgType = UDamageType::StaticClass();
+	AController* MyOwnerInstigator = MyOwner->GetInstigatorController();
+	UClass* DmgType = UDamageType::StaticClass();
 
 	if (OtherActor && OtherActor != this && OtherActor != MyOwner)
 	{
@@ -67,7 +68,10 @@ void ABaseProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UP
 		{
 			UGameplayStatics::PlaySoundAtLocation(this, OnHitSound, GetActorLocation());
 		}
-		
+		if (CameraOnHitClass)
+		{
+			GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(CameraOnHitClass);
+		}
 	}
 	Destroy();
 }
