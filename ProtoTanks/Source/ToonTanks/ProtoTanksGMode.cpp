@@ -5,12 +5,14 @@
 #include "Kismet/GameplayStatics.h"
 #include "Tank.h"
 #include "Turret.h"
+#include "ProtoTanksController.h"
 
 
 void AProtoTanksGMode::BeginPlay(){
 	Super::BeginPlay();
 
-	Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this,0));
+	HandleGameStart();
+
 }
 
 void AProtoTanksGMode::ActorDied(AActor* DeadActor) {
@@ -18,10 +20,29 @@ void AProtoTanksGMode::ActorDied(AActor* DeadActor) {
 		Tank->HandleDestruction();
 		if (Tank->GetTankPlayerControllerPtr())
 		{
-			Tank->DisableInput(Tank->GetTankPlayerControllerPtr());
+			ProtoTanksController->SetPlayerEnabledState(false);
 		}
 	}
 	else if (ATurret* DestroyedTurret = Cast<ATurret>(DeadActor)) {
 		DestroyedTurret->HandleDestruction();
 	}
 }
+
+void AProtoTanksGMode::HandleGameStart(){
+
+	Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
+	ProtoTanksController = Cast<AProtoTanksController>(UGameplayStatics::GetPlayerController(this, 0));
+
+	StartGame();
+
+	if (ProtoTanksController) {
+		ProtoTanksController->SetPlayerEnabledState(false);
+
+		FTimerHandle PlayerEnabledTimerHandle;
+
+		FTimerDelegate PlayerEnabledDelegate = FTimerDelegate::CreateUObject(ProtoTanksController, &AProtoTanksController::SetPlayerEnabledState, true);
+
+		GetWorldTimerManager().SetTimer(PlayerEnabledTimerHandle, PlayerEnabledDelegate, StartDelay, false);
+	}
+}
+
