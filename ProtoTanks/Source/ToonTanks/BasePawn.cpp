@@ -3,6 +3,7 @@
 
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
+#include "BaseProjectile.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -42,15 +43,10 @@ void ABasePawn::Tick(float DeltaTime)
 
 void ABasePawn::Fire()
 {
-	FVector MySpawner = SC_SpawnProjectile->GetComponentLocation();
-
-	DrawDebugSphere(GetWorld(),
-		MySpawner,
-		25.f,
-		12.f,
-		FColor::Green,
-		false,
-		3.f);
+	FVector MySpawnerLoc = SC_SpawnProjectile->GetComponentLocation();
+	FRotator MySpawnerRot = SC_SpawnProjectile->GetComponentRotation();
+	
+	GetWorld()->SpawnActor<ABaseProjectile>(BaseProjectileClass, MySpawnerLoc, MySpawnerRot);
 
 }
 

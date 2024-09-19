@@ -37,5 +37,7 @@ private:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Pawn Components",meta=(AllowPrivateAccess = "true"))
 	USceneComponent* SC_SpawnProjectile;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Combat Components", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class ABaseProjectile> BaseProjectileClass;
 
 };

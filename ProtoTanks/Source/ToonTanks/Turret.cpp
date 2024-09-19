@@ -41,6 +41,7 @@ bool ATurret::InRange() {
 		{
 			return true;
 		}
+		else return false;
 	}
 	else return false;
 }
