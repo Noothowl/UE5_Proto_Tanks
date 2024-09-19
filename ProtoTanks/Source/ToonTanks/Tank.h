@@ -28,7 +28,7 @@ private:
 	virtual void Fire();
 	void Turn(float value);
 
-	class APlayerController* PlayerControllerRef;
+	class APlayerController* TankPlayerControllerPtr;
 
 protected:
 	// Called when the game starts or when spawned
@@ -38,5 +38,8 @@ public:
 	ATank();
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void Tick(float DeltaTime) override;
+	virtual void HandleDestruction() override;
+
+	virtual APlayerController* GetTankPlayerControllerPtr() const { return TankPlayerControllerPtr; }
 	
 };

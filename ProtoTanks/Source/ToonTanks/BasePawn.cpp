@@ -27,6 +27,13 @@ ABasePawn::ABasePawn()
 
 }
 
+void ABasePawn::HandleDestruction() {
+	//vfx
+
+	//
+	
+}
+
 // Called when the game starts or when spawned
 void ABasePawn::BeginPlay()
 {
@@ -46,7 +53,8 @@ void ABasePawn::Fire()
 	FVector MySpawnerLoc = SC_SpawnProjectile->GetComponentLocation();
 	FRotator MySpawnerRot = SC_SpawnProjectile->GetComponentRotation();
 	
-	GetWorld()->SpawnActor<ABaseProjectile>(BaseProjectileClass, MySpawnerLoc, MySpawnerRot);
+	auto Projectile = GetWorld()->SpawnActor<ABaseProjectile>(BaseProjectileClass, MySpawnerLoc, MySpawnerRot);
+	Projectile->SetOwner(this);
 
 }
 
