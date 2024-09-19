@@ -48,6 +48,12 @@
     <ClInclude Include="..\..\Source\ToonTanks\HPComponent.h">
       <Filter>Source\ToonTanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ToonTanks\ProtoTanksController.cpp">
+      <Filter>Source\ToonTanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\ProtoTanksController.h">
+      <Filter>Source\ToonTanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\ToonTanks\ProtoTanksGMode.cpp">
       <Filter>Source\ToonTanks</Filter>
     </ClCompile>
