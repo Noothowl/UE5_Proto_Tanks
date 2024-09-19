@@ -42,6 +42,18 @@
     <ClInclude Include="..\..\Source\ToonTanks\BaseProjectile.h">
       <Filter>Source\ToonTanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ToonTanks\HPComponent.cpp">
+      <Filter>Source\ToonTanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\HPComponent.h">
+      <Filter>Source\ToonTanks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ToonTanks\ProtoTanksGMode.cpp">
+      <Filter>Source\ToonTanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ToonTanks\ProtoTanksGMode.h">
+      <Filter>Source\ToonTanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\ToonTanks\Tank.cpp">
       <Filter>Source\ToonTanks</Filter>
     </ClCompile>

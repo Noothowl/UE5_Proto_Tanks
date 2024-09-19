@@ -3,6 +3,8 @@
 
 #include "BaseProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "GameFramework/DamageType.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABaseProjectile::ABaseProjectile()
@@ -35,6 +37,23 @@ void ABaseProjectile::Tick(float DeltaTime)
 
 void ABaseProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
 	
+	
+	auto MyOwner = GetOwner();
+	if (MyOwner == nullptr) return;
+	auto MyOwnerInstigator = MyOwner->GetInstigatorController();
+	auto DmgType = UDamageType::StaticClass();
+
+	if (OtherActor && OtherActor != this && OtherActor != MyOwner)
+	{
+		UGameplayStatics::ApplyDamage(
+			OtherActor,				// Actor that will be damaged.
+			BaseDamage,					// Damage amount.
+			MyOwnerInstigator,	// Which player instigated it.
+			this,					// What actor caused the damage.
+			DmgType
+		);
+		Destroy();
+	}
 
 }
 

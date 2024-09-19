@@ -46,3 +46,8 @@ bool ATurret::InRange() {
 	else return false;
 }
 
+void ATurret::HandleDestruction() {
+	Super::HandleDestruction();
+	Destroy();
+}
+

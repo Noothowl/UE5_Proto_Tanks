@@ -14,6 +14,7 @@ class TOONTANKS_API ATurret : public ABasePawn
 	GENERATED_BODY()
 public:
 	virtual void Tick(float DeltaTime) override;
+	virtual void HandleDestruction() override;
 protected:
 	virtual void BeginPlay() override;
 

@@ -16,6 +16,12 @@ ATank::ATank() {
 
 
 }
+void ATank::HandleDestruction() {
+	Super::HandleDestruction();
+
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+}
 
 void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -50,7 +56,7 @@ void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 
-	PlayerControllerRef = Cast<APlayerController>(GetController());
+	TankPlayerControllerPtr = Cast<APlayerController>(GetController());
 	
 }
 
@@ -58,9 +64,9 @@ void ATank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	if (PlayerControllerRef) {
+	if (TankPlayerControllerPtr) {
 		FHitResult Res;
-		PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, Res);
+		TankPlayerControllerPtr->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, Res);
 		DrawDebugSphere(GetWorld(),
 			Res.ImpactPoint,
 			25.f,
