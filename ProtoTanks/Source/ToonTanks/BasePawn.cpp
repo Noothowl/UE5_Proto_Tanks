@@ -4,6 +4,9 @@
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
 #include "BaseProjectile.h"
+#include "Kismet/GameplayStatics.h"
+#include "Camera/CameraShakeBase.h"
+
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -28,9 +31,18 @@ ABasePawn::ABasePawn()
 }
 
 void ABasePawn::HandleDestruction() {
-	//vfx
 
-	//
+	UGameplayStatics::SpawnEmitterAtLocation(this, VfxOnDeath, GetActorLocation(), GetActorRotation());
+
+	if (DeathSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+	}
+	if (CameraOnDeathClass)
+	{
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(CameraOnDeathClass);
+	}
+
 	
 }
 
@@ -53,7 +65,7 @@ void ABasePawn::Fire()
 	FVector MySpawnerLoc = SC_SpawnProjectile->GetComponentLocation();
 	FRotator MySpawnerRot = SC_SpawnProjectile->GetComponentRotation();
 	
-	auto Projectile = GetWorld()->SpawnActor<ABaseProjectile>(BaseProjectileClass, MySpawnerLoc, MySpawnerRot);
+	ABaseProjectile* Projectile = GetWorld()->SpawnActor<ABaseProjectile>(BaseProjectileClass, MySpawnerLoc, MySpawnerRot);
 	Projectile->SetOwner(this);
 
 }

@@ -18,9 +18,10 @@ ATank::ATank() {
 }
 void ATank::HandleDestruction() {
 	Super::HandleDestruction();
-
+	Alive = false;
 	SetActorHiddenInGame(true);
 	SetActorTickEnabled(false);
+
 }
 
 void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

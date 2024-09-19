@@ -41,5 +41,7 @@ public:
 	virtual void HandleDestruction() override;
 
 	virtual APlayerController* GetTankPlayerControllerPtr() const { return TankPlayerControllerPtr; }
+
+	bool Alive=true;
 	
 };

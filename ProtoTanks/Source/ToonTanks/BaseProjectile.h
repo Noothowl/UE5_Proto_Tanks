@@ -5,7 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "BaseProjectile.generated.h"
-
+class USondbase;
+class UCameraShakeBase;
 UCLASS()
 class TOONTANKS_API ABaseProjectile : public AActor
 {
@@ -28,8 +29,18 @@ private:
 	UStaticMeshComponent* SM_Base;
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
 	class UProjectileMovementComponent* ProjectileLogic;
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Combat Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
 	float BaseDamage;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
+	UParticleSystem* VfxOnHit;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
+	USoundBase* ShotSound;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
+	USoundBase* OnHitSound;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
+	class UParticleSystemComponent* VfxTrail;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UCameraShakeBase> CameraOnHitClass;
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
