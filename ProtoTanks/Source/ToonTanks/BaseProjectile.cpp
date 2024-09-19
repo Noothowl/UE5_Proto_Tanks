@@ -22,6 +22,7 @@ ABaseProjectile::ABaseProjectile()
 void ABaseProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+	SM_Base->OnComponentHit.AddDynamic(this, &ABaseProjectile::OnHit);
 	
 }
 
@@ -31,4 +32,10 @@ void ABaseProjectile::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+void ABaseProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
+	
+
+}
+
 

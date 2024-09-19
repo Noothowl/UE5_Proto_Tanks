@@ -28,4 +28,6 @@ private:
 	UStaticMeshComponent* SM_Base;
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Projectile Components", meta = (AllowPrivateAccess = "true"))
 	class UProjectileMovementComponent* ProjectileLogic;
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
